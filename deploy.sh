@@ -47,7 +47,8 @@ else
   git checkout repository
 fi
 
-mvn install:install-file -DgroupId=${group_id} -DartifactId=${artifact_id} -Dversion=${version} -Dfile=${jar_location} -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=. -DcreateChecksum=true
+# именно 2.5.2 в версиях выше не генерится checksum (выпилено в версиях 3.0.0+)
+mvn install:2.5.2:install-file -DgroupId=${group_id} -DartifactId=${artifact_id} -Dversion=${version} -Dfile=${jar_location} -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=. -DcreateChecksum=true
 
 # Commit and push
 echo "Committing and pushing to repository branch..."
