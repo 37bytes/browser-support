@@ -3,7 +3,7 @@
 ### deploy
 
 ```shell
-deploy.sh dev.b37.libs browser-support <VERSION>
+deploy.sh dev.b37.libs browser-support {VERSION}
 ```
 
 ### usage dependency
@@ -22,7 +22,7 @@ deploy.sh dev.b37.libs browser-support <VERSION>
             <dependency>
                 <groupId>dev.b37.libs</groupId>
                 <artifactId>browser-support</artifactId>
-                <version>0.0.1</version>
+                <version>{VERSION}</version>
             </dependency>
         </dependencies>
 ```
