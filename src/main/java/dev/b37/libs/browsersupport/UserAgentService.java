@@ -8,6 +8,7 @@ import dev.b37.libs.browsersupport.model.WebBrowserInfo;
 import dev.b37.libs.browsersupport.model.WebBrowserName;
 import nl.basjes.parse.useragent.UserAgent;
 import nl.basjes.parse.useragent.UserAgentAnalyzer;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -106,7 +107,7 @@ class UserAgentService {
             versionString = userAgent.getValue(UserAgent.AGENT_VERSION_MAJOR);
         }
 
-        if (versionString == null) {
+        if (StringUtils.isBlank(versionString) || !versionString.matches("-?\\d+")) {
             log.warn("Unknown browser version: browserName=[{}], userAgent=[{}]", browserName, userAgent.getUserAgentString());
             return null;
         }

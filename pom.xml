@@ -5,7 +5,7 @@
 
     <groupId>dev.b37.libs</groupId>
     <artifactId>browser-support</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <properties>
